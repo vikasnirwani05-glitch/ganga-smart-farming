@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ganga Smart Farming</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8f1;--card:#fff;--tx:#1f2a1c;--mu:#667061;--g:#2e7d32;--g2:#1b5e20;--gold:#f2b705;--bd:#dfe6d6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#121a11;--card:#1b261a;--tx:#eaf2e5;--mu:#9bab95;--bd:#2c3b2a}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:Poppins,system-ui,sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--g2);color:#fff;display:flex;align-items:center;gap:12px;padding:8px 16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;cursor:pointer}.brand b{font-size:18px;line-height:1.1}.brand small{display:block;font-size:11px;opacity:.8}
+nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:auto}
+nav button{background:none;border:0;color:#fff;padding:8px 12px;border-radius:8px;font:inherit;font-size:14px;cursor:pointer}
+nav button.on,nav button:hover{background:rgba(255,255,255,.18)}
+main{max-width:1100px;margin:0 auto;padding:20px 16px 60px}
+.hero{background:linear-gradient(120deg,#1b5e20,#43a047);color:#fff;border-radius:20px;padding:36px 28px;margin-bottom:24px;display:flex;gap:20px;align-items:center;flex-wrap:wrap}
+.hero h1{margin:0 0 8px;font-size:clamp(24px,5vw,38px)}.hero p{margin:0 0 16px;opacity:.92;max-width:520px}
+.btn{background:var(--gold);color:#222;border:0;border-radius:10px;padding:10px 18px;font:inherit;font-weight:600;cursor:pointer}
+.btn.g{background:var(--g);color:#fff}.btn.o{background:none;border:1px solid var(--bd);color:var(--tx)}.btn.r{background:#c62828;color:#fff}.btn.s{padding:6px 12px;font-size:13px}
+h2{margin:24px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.card .im{height:160px;background:#e8f0e0;display:flex;align-items:center;justify-content:center;font-size:56px}
+.card .im img{width:100%;height:100%;object-fit:cover}
+.card .b{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}.card h3{margin:0;font-size:16px}
+.mu{color:var(--mu);font-size:13px}.price{font-weight:700;color:var(--g);font-size:18px}
+.row{display:flex;gap:8px;align-items:center;margin-top:auto}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);font:inherit;font-size:14px}
+label{font-size:13px;color:var(--mu);display:block;margin:10px 0 4px}
+.panel{background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:18px;margin-bottom:16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:600px){.two{grid-template-columns:1fr}}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tag{display:inline-block;padding:2px 10px;border-radius:99px;font-size:12px;background:#e8f5e9;color:var(--g2)}.tag.p{background:#fff3cd;color:#7a5b00}.tag.d{background:#e3f2fd;color:#0d47a1}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:8px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}
+.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom,0px));left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:10px 18px;border-radius:10px;z-index:9;display:none}
+.cnt{background:var(--gold);color:#222;border-radius:99px;padding:0 7px;font-size:12px;margin-left:4px}
+footer{text-align:center;color:var(--mu);font-size:13px;padding:20px}
+</style></head><body>
+<header>
+<div class="brand" onclick="go('home')">
+<svg width="46" height="46" viewBox="0 0 100 100" aria-label="Ganga Smart Farming logo"><circle cx="50" cy="50" r="48" fill="#fff"/><circle cx="50" cy="50" r="44" fill="#2e7d32"/><path d="M12 68c14-8 24 6 38-2s24 6 38-2v14c-14 8-24-6-38 2s-24-6-38 2z" fill="#4fc3f7"/><path d="M50 62V22M50 52c-8-2-14-9-15-17 8 1 14 8 15 17zM50 44c8-2 14-9 15-17-8 1-14 8-15 17zM50 34c-6-1-10-6-11-12 6 1 10 6 11 12z" stroke="#f2b705" stroke-width="3.5" fill="#c6e48b" stroke-linejoin="round" stroke-linecap="round"/><circle cx="50" cy="16" r="5" fill="#f2b705"/></svg>
+<div><b>Ganga Smart Farming</b><small>Seeds • Silage • Tractors</small></div></div>
+<nav id="nav"></nav></header>
+<main id="app"></main>
+<footer>© Ganga Smart Farming • Cash on Delivery available across all orders</footer>
+<div class="toast" id="toast"></div>
+<script>
+const $=s=>document.querySelector(s);
+let S={products:[],tractors:[],orders:[]},cart=[],view='home',atab='orders',admin=false,sec='';
+try{S=JSON.parse(localStorage.getItem('gsf')||'null')||S}catch(e){}
+try{admin=sessionStorage.getItem('gsfa')==='1'}catch(e){}
+function pw(){try{return localStorage.getItem('gsfp')||'ganga123'}catch(e){return'ganga123'}}
+if(!S.products.length&&!S.tractors.length){S={products:[
+{id:1,type:'seed',name:'Co-0238 Sugarcane Seed',price:450,unit:'quintal',desc:'High-yield, red-rot resistant variety. Healthy 3-bud setts.'},
+{id:2,type:'seed',name:'Co-86032 Sugarcane Seed',price:420,unit:'quintal',desc:'Early-maturing variety with high sugar recovery.'},
+{id:3,type:'silage',name:'Maize Silage',price:3200,unit:'tonne',desc:'Fermented, nutrient-rich fodder for dairy cows.'},
+{id:4,type:'silage',name:'Sugarcane Top Silage',price:2200,unit:'tonne',desc:'Energy-rich cattle feed, great value in dry season.'}],
+tractors:[{id:5,name:'Mahindra 575 DI',hp:45,rate:600,desc:'Ideal for ploughing and haulage.'},{id:6,name:'John Deere 5310',hp:55,rate:750,desc:'Powerful all-rounder with rotavator support.'}],orders:[]};save()}
+const key=o=>(o.type||'t')+'|'+o.name.trim().toLowerCase();
+function dedupe(){let n=0;for(const k of['products','tractors']){const seen=new Set();S[k]=S[k].filter(o=>{const x=key(o);if(seen.has(x)){n++;return false}seen.add(x);return true})}
+const seenO=new Set();S.orders=S.orders.filter(o=>{const x=[o.kind,o.name,o.phone,o.addr,o.total,o.items.join()].join('|');if(seenO.has(x)){n++;return false}seenO.add(x);return true});save();return n}
+dedupe();
+function save(){try{localStorage.setItem('gsf',JSON.stringify(S))}catch(e){toast('Storage full - use smaller images')}}
+function ask(msg,fn){const d=document.createElement('div');d.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:20;display:flex;align-items:center;justify-content:center;padding:16px';
+d.innerHTML=`<div class="panel" style="max-width:340px;margin:0;text-align:center"><p><b>${msg}</b></p><button class="btn r" id="yy">Yes, remove</button> <button class="btn o" id="nn">Cancel</button></div>`;document.body.appendChild(d);
+d.querySelector('#nn').onclick=()=>d.remove();d.querySelector('#yy').onclick=()=>{d.remove();fn()}}
+function toast(m){const t=$('#toast');t.textContent=m;t.style.display='block';setTimeout(()=>t.style.display='none',2400)}
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const inr=n=>'₹'+Number(n).toLocaleString('en-IN');
+function go(v){view=v;render();scrollTo(0,0)}
+function nav(){const c=cart.reduce((a,b)=>a+b.q,0);
+const items=[['home','Home'],['seed','Seeds'],['silage','Silage'],['tractor','Tractors'],['track','My Orders'],['cart','Cart<span class="cnt">'+c+'</span>'],['admin',admin?'Admin Panel':'Admin Login']];
+$('#nav').innerHTML=items.map(([k,l])=>`<button class="${view===k?'on':''}" onclick="go('${k}')">${l}</button>`).join('')}
+function img(o,e){return o.img?`<img src="${o.img}" alt="${esc(o.name)}">`:e}
+function pcard(p,adm){const rm=`<button class="btn r s" onclick="delP(${p.id})">🗑 Remove</button>`;return `<div class="card"><div class="im">${img(p,p.type==='seed'?'🌱':'🌾')}</div><div class="b"><h3>${esc(p.name)}</h3><div class="mu">${esc(p.desc)}</div><div class="price">${inr(p.price)} <span class="mu">/ ${esc(p.unit)}</span></div><div class="row">${adm?'':`<input type="number" min="1" value="1" id="q${p.id}" style="width:70px">`}${adm?rm:`<button class="btn g" onclick="add(${p.id})">Add to cart</button>`+(admin?rm:'')}</div></div></div>`}
+function tcard(t,adm){const rm=`<button class="btn r s" onclick="delT(${t.id})">🗑 Remove</button>`;return `<div class="card"><div class="im">${img(t,'🚜')}</div><div class="b"><h3>${esc(t.name)}</h3><div class="mu">${t.hp} HP • ${esc(t.desc)}</div><div class="price">${inr(t.rate)} <span class="mu">/ hour</span></div><div class="row">${adm?rm:`<button class="btn g" onclick="book(${t.id})">Book hourly</button>`+(admin?rm:'')}</div></div></div>`}
+function add(id){const q=+$('#q'+id).value||1,p=S.products.find(x=>x.id===id),c=cart.find(x=>x.id===id);c?c.q+=q:cart.push({id,q});toast(p.name+' added');nav()}
+let bk=null;function book(id){bk=id;go('book')}
+function render(){nav();const a=$('#app');
+if(view==='home')a.innerHTML=`<div class="hero"><div><h1>Grow smarter with Ganga Smart Farming</h1><p>Quality sugarcane seeds, nutritious cattle silage and tractors on hourly rent - delivered with Cash on Delivery.</p><button class="btn" onclick="go('seed')">Shop Seeds</button> <button class="btn o" style="color:#fff;border-color:#fff" onclick="go('tractor')">Book a Tractor</button></div></div>
+<h2>🌱 Sugarcane Seeds</h2><div class="grid">${S.products.filter(p=>p.type==='seed').slice(0,4).map(pcard).join('')||'<p class=mu>Coming soon</p>'}</div>
+<h2>🌾 Silage for Cattle</h2><div class="grid">${S.products.filter(p=>p.type==='silage').slice(0,4).map(pcard).join('')||'<p class=mu>Coming soon</p>'}</div>
+<h2>🚜 Tractors on Rent</h2><div class="grid">${S.tractors.map(tcard).join('')||'<p class=mu>No tractors available now</p>'}</div>`;
+else if(view==='seed'||view==='silage')a.innerHTML=`<h2>${view==='seed'?'🌱 Sugarcane Seeds':'🌾 Silage Products'}</h2><div class="grid">${S.products.filter(p=>p.type===view).map(pcard).join('')||'<p class=mu>No items yet</p>'}</div>`;
+else if(view==='tractor')a.innerHTML=`<h2>🚜 Book a Tractor (hourly)</h2><div class="grid">${S.tractors.map(tcard).join('')||'<p class=mu>No tractors available</p>'}</div>`;
+else if(view==='cart')cartV(a);else if(view==='book')bookV(a);else if(view==='track')trackV(a);else if(view==='admin')admin?adminV(a):loginV(a)}
+function cartV(a){if(!cart.length){a.innerHTML='<h2>Your cart</h2><p class="mu">Cart is empty.</p>';return}
+let tot=0;const rows=cart.map((c,i)=>{const p=S.products.find(x=>x.id===c.id);if(!p)return'';tot+=p.price*c.q;return `<tr><td>${esc(p.name)}</td><td>${c.q} ${esc(p.unit)}</td><td>${inr(p.price*c.q)}</td><td><button class="btn r s" onclick="cart.splice(${i},1);render()">✕</button></td></tr>`}).join('');
+a.innerHTML=`<h2>Your cart</h2><div class="panel tw"><table>${rows}<tr><th colspan=2>Total</th><th colspan=2>${inr(tot)}</th></tr></table></div>
+<div class="panel"><h3>Delivery details (Cash on Delivery)</h3><div class="two"><div><label>Name</label><input id="cn"></div><div><label>Phone</label><input id="cp" type="tel"></div></div><label>Delivery address</label><textarea id="ca" rows="3"></textarea><p class="mu">💵 Pay in cash when your order arrives.</p><button class="btn g" onclick="place(${tot})">Place COD order</button></div>`}
+let busy=0;function place(tot){if(busy)return;const n=$('#cn').value.trim(),p=$('#cp').value.trim(),ad=$('#ca').value.trim();if(!n||p.length<10||!ad)return toast('Fill name, valid phone and address');
+busy=1;setTimeout(()=>busy=0,1500);S.orders.unshift({id:Date.now(),kind:'order',name:n,phone:p,addr:ad,total:tot,status:'Pending',date:new Date().toLocaleString(),items:cart.map(c=>{const x=S.products.find(y=>y.id===c.id);return`${x.name} × ${c.q} ${x.unit}`})});save();cart=[];toast('Order placed! Pay on delivery.');go('track')}
+function bookV(a){const t=S.tractors.find(x=>x.id===bk);if(!t)return go('tractor');
+a.innerHTML=`<h2>Book ${esc(t.name)}</h2><div class="panel"><div class="two"><div><label>Date</label><input type="date" id="bd" min="${new Date().toISOString().slice(0,10)}"></div><div><label>Start time</label><input type="time" id="bt" value="08:00"></div><div><label>Hours</label><input type="number" id="bh" min="1" value="2" oninput="$('#bp').textContent=inr(${t.rate}*(+this.value||0))"></div><div><label>Estimated cost</label><div class="price" id="bp">${inr(t.rate*2)}</div></div><div><label>Name</label><input id="bn"></div><div><label>Phone</label><input id="bph" type="tel"></div></div><label>Field location / address</label><textarea id="ba" rows="3"></textarea><p class="mu">💵 Pay cash after the work.</p><button class="btn g" onclick="doBook(${t.id})">Confirm booking</button></div>`}
+function doBook(id){if(busy)return;const t=S.tractors.find(x=>x.id===id),d=$('#bd').value,h=+$('#bh').value,n=$('#bn').value.trim(),p=$('#bph').value.trim(),ad=$('#ba').value.trim();if(!d||h<1||!n||p.length<10||!ad)return toast('Please fill all fields');
+busy=1;setTimeout(()=>busy=0,1500);S.orders.unshift({id:Date.now(),kind:'booking',name:n,phone:p,addr:ad,total:t.rate*h,status:'Pending',date:new Date().toLocaleString(),items:[`${t.name} - ${h} hr on ${d} at ${$('#bt').value}`]});save();toast('Tractor booked!');go('track')}
+function trackV(a){a.innerHTML=`<h2>My orders</h2><div class="panel"><label>Enter your phone number</label><div class="row"><input id="tp" type="tel" value="${esc(sec)}"><button class="btn g" onclick="sec=$('#tp').value.trim();render()">Show</button></div></div>`+(sec?(()=>{const o=S.orders.filter(x=>x.phone===sec);return o.length?o.map(oc).join(''):'<p class=mu>No orders found.</p>'})():'')}
+function oc(o){return `<div class="panel"><b>${o.kind==='order'?'🛒 Order':'🚜 Booking'} #${String(o.id).slice(-6)}</b> <span class="tag ${o.status==='Pending'?'p':o.status==='Delivered'||o.status==='Completed'?'':'d'}">${o.status}</span><div class="mu">${o.date}</div><ul>${o.items.map(i=>`<li>${esc(i)}</li>`).join('')}</ul><b>${inr(o.total)}</b> <span class="mu">• Cash on Delivery</span>${admin&&view==='admin'?`<div class="mu" style="margin-top:6px">👤 ${esc(o.name)} • 📞 ${esc(o.phone)}<br>📍 ${esc(o.addr)}</div><div class="row" style="margin-top:10px"><select onchange="setSt(${o.id},this.value)" style="width:auto">${['Pending','Confirmed','Out for delivery','Delivered','Completed','Cancelled'].map(s=>`<option ${s===o.status?'selected':''}>${s}</option>`).join('')}</select><button class="btn r s" onclick="delO(${o.id})">Delete</button></div>`:''}</div>`}
+function loginV(a){a.innerHTML=`<h2>Admin login</h2><div class="panel" style="max-width:380px"><label>Password</label><input type="password" id="ap" onkeydown="if(event.key==='Enter')login()"><p class="mu">Default password: ganga123 (change it after login)</p><button class="btn g" onclick="login()">Login</button></div>`}
+function login(){if($('#ap').value===pw()){admin=true;try{sessionStorage.setItem('gsfa','1')}catch(e){}render()}else toast('Wrong password')}
+function adminV(a){const pend=S.orders.filter(o=>o.status==='Pending').length;
+a.innerHTML=`<h2>Owner dashboard</h2><div class="tabs">${[['orders','Orders ('+S.orders.length+', '+pend+' new)'],['products','Seeds & Silage'],['tractors','Tractors'],['settings','Settings']].map(([k,l])=>`<button class="btn ${atab===k?'g':'o'}" onclick="atab='${k}';render()">${l}</button>`).join('')}<button class="btn o" onclick="const n=dedupe();toast(n+' duplicate(s) removed');render()">Remove duplicates</button><button class="btn r" onclick="admin=false;try{sessionStorage.removeItem('gsfa')}catch(e){}go('home')">Logout</button></div><div id="at"></div>`;
+const t=$('#at');
+if(atab==='orders')t.innerHTML=(S.orders.length?'<p><button class="btn r s" onclick="ask(\'Delete ALL orders and bookings?\',()=>{S.orders=[];save();render()})">Delete all orders</button></p>':'')+(S.orders.map(oc).join('')||'<p class=mu>No orders yet.</p>');
+if(atab==='products')t.innerHTML=`<p><button class="btn r s" onclick="ask('Delete ALL products?',()=>{S.products=[];save();render()})">Delete all products</button></p><div class="panel"><h3>Add product</h3><div class="two"><div><label>Type</label><select id="pt"><option value="seed">Sugarcane seed</option><option value="silage">Silage</option></select></div><div><label>Name</label><input id="pn"></div><div><label>Price (₹)</label><input type="number" id="pp"></div><div><label>Unit (kg / quintal / tonne)</label><input id="pu" value="quintal"></div></div><label>Description</label><textarea id="pd" rows="2"></textarea><label>Picture</label><input type="file" accept="image/*" id="pi"><br><br><button class="btn g" onclick="addP()">Add product</button></div><div class="grid">${S.products.map(p=>pcard(p,1)).join('')||'<p class=mu>No products yet.</p>'}</div>`;
+if(atab==='tractors')t.innerHTML=`<p><button class="btn r s" onclick="ask('Remove ALL tractors?',()=>{S.tractors=[];save();render()})">Remove all tractors</button></p><div class="panel"><h3>Add available tractor</h3><div class="two"><div><label>Name / model</label><input id="tn"></div><div><label>Horsepower</label><input type="number" id="th"></div><div><label>Rate per hour (₹)</label><input type="number" id="tr"></div><div><label>Description</label><input id="td"></div></div><label>Picture</label><input type="file" accept="image/*" id="ti"><br><br><button class="btn g" onclick="addT()">Add tractor</button></div><div class="grid">${S.tractors.map(x=>tcard(x,1)).join('')||'<p class=mu>No tractors yet.</p>'}</div>`;
+if(atab==='settings')t.innerHTML=`<div class="panel" style="max-width:380px"><label>New admin password</label><input id="np" type="password"><br><br><button class="btn g" onclick="if($('#np').value.length<6)return toast('Min 6 characters');localStorage.setItem('gsfp',$('#np').value);toast('Password changed')">Change password</button></div>`}
+function setSt(id,s){S.orders.find(o=>o.id===id).status=s;save();toast('Status updated')}
+function delO(id){ask('Delete this order?',()=>{S.orders=S.orders.filter(o=>o.id!==id);save();render();toast('Order deleted')})}
+function delP(id){ask('Remove this product?',()=>{S.products=S.products.filter(p=>p.id!==id);save();render();toast('Product removed')})}
+function delT(id){ask('Remove this tractor?',()=>{S.tractors=S.tractors.filter(p=>p.id!==id);save();render();toast('Tractor removed')})}
+function shrink(f){return new Promise(r=>{if(!f)return r('');const fr=new FileReader();fr.onload=()=>{const i=new Image();i.onload=()=>{const k=Math.min(1,520/i.width),c=document.createElement('canvas');c.width=i.width*k;c.height=i.height*k;c.getContext('2d').drawImage(i,0,0,c.width,c.height);r(c.toDataURL('image/jpeg',.72))};i.src=fr.result};fr.readAsDataURL(f)})}
+async function addP(){const n=$('#pn').value.trim(),p=+$('#pp').value;if(!n||!p)return toast('Name and price required');
+if(S.products.some(x=>key(x)===(($('#pt').value)+'|'+n.toLowerCase())))return toast('This product already exists');
+S.products.push({id:Date.now(),type:$('#pt').value,name:n,price:p,unit:$('#pu').value||'unit',desc:$('#pd').value,img:await shrink($('#pi').files[0])});save();toast('Product added');render()}
+async function addT(){const n=$('#tn').value.trim(),r=+$('#tr').value;if(!n||!r)return toast('Name and rate required');
+if(S.tractors.some(x=>key(x)==='t|'+n.toLowerCase()))return toast('This tractor already exists');
+S.tractors.push({id:Date.now(),name:n,hp:+$('#th').value||0,rate:r,desc:$('#td').value,img:await shrink($('#ti').files[0])});save();toast('Tractor added');render()}
+render();
+</script></body></html>
